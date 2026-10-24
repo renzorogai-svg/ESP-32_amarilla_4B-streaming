@@ -1,0 +1,16 @@
+Se requiere de la limpieza de los tambores según la experticia del operador para hacer la maniobra de la instalación 
+El Operador Seleccionará a través de un Selector del 3 posiciones ubicado en la Puerta del Tablero el ciclo de lavado, identificados como "Modo 1" y "Modo 3"
+"Modo 1": Selecciona un Ciclo de limpieza o lavado, con una duración de 7 Segundos y finaliza el proceso de limpieza.
+"Modo 3": Selecciona 3 Ciclos de limpieza o lavado, con una duración de 7 Segundos y Reposa 3 Seg. Hasta culminar los tres (3) ciclos.
+Una vez seleccionado el Modo, el operador pulsa el botón color Verde (PB01) para iniciar los ciclos de limpieza.
+ En la Puerta existirán dos (2) Luces Pilotos color Rojo que indicará cual es el Modo del Ciclo de CIP que fue seleccionado por el operador
+Y así, se repite el proceso de limpieza en función de la cantidad de tambores que requieran CIP
+
+MAPA DE DIRECCIONAMIENTO
+El ESP32 se programará para manejar el siguiente grupo de I/O´s 
+1 entrada discreta (DI01) para la selección del "Modo 1"
+1 entrada discreta (DI02) para la selección del "Modo 3"
+1 entrada discreta (DI03) para la selección del "INICIO CIP"
+1 salida Discreta (DO01) para ACTIVAR la Electroválvula en "Modo 1"
+1 salida Discreta (DI02) para ACTIVAR la Electroválvula en "Modo 1"
+Cada Salida Discreta (DO01) o (DI02) activará un relé de interposición para que de manera aislada pueda energizar en paralelo le Electrovalvula de 110VAC y la Luz Piloto del Modo seleccionado
